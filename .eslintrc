@@ -1,0 +1,129 @@
+{
+    "env": {
+      "browser": false,
+      "commonjs": false,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "ignorePatterns": [
+      "package.json"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "db/**",
+          "tests/**",
+          "src/index.ts"
+        ],
+        "rules": {
+          "no-console": "off"
+        }
+      },
+      {
+        "files": [
+          "*.ts",
+          ".tsx"
+        ],
+        "rules": {
+          "@typescript-eslint/explicit-function-return-type": [
+            "error"
+          ]
+        }
+      }
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+          "jsx": true
+      },
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+  },
+    "plugins": [
+      "prefer-arrow",
+      "@typescript-eslint",
+      "import"
+    ],
+    "rules": {
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          "args": "after-used",
+          "argsIgnorePattern": "^_"
+        }
+      ],
+      "@typescript-eslint/no-use-before-define": "off",
+      "comma-dangle": [
+        "error",
+        "never"
+      ],
+      "default-case": "error",
+      "eol-last": "error",
+      "eqeqeq": [
+        "error",
+        "always"
+      ],
+      "explicit-function-return-type": 0,
+      "import/order": [
+        "error",
+        {
+          "alphabetize": {
+            "order": "asc"
+          },
+          "groups": [
+            "builtin",
+            "external",
+            "internal",
+            [
+              "parent",
+              "sibling",
+              "index"
+            ]
+          ],
+          "newlines-between": "always"
+        }
+      ],
+      "max-lines": [
+        "error",
+        {
+          "max": 500,
+          "skipComments": true
+        }
+      ],
+      "no-multiple-empty-lines": "error",
+      "no-return-await": "error",
+      "no-trailing-spaces": "error",
+      "no-unused-vars": "off",
+      "no-use-before-define": "off",
+      "no-useless-constructor": "off",
+      "object-curly-spacing": [
+        "error",
+        "always"
+      ],
+      "quotes": [
+        "error",
+        "single",
+        {
+          "allowTemplateLiterals": true,
+          "avoidEscape": true
+        }
+      ],
+      "require-await": "warn",
+      "semi": [
+        "error",
+        "always",
+        {
+          "omitLastInOneLineBlock": true
+        }
+      ],
+      "yoda": "error"
+    },
+    "settings": {
+      "import/internal-regex": "^(config|controllers|db|entities|external|logics|security|utils|const|customExpress)"
+    }
+  }
